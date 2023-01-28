@@ -5,6 +5,7 @@ void setDrive(double left, double right);
 void controlDrive();
 
 void setDriveCoast();
+void setDriveBrake();
 
 void moveFeet(double feet, double power);
 

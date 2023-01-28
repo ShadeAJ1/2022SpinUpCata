@@ -80,10 +80,9 @@ extern "C"
 
 #ifdef __cplusplus
 
-#include "subsystemHeaders/flywheel.hpp"
+#include "subsystemHeaders/cata.hpp"
 #include "subsystemHeaders/drive.hpp"
 #include "subsystemHeaders/intake.hpp"
-#include "subsystemHeaders/roller.hpp"
 #include "subsystemHeaders/globals.hpp"
 #include "subsystemHeaders/trigger.hpp"
 

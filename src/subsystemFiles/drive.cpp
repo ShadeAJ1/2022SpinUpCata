@@ -5,31 +5,45 @@ void setDrive(double left, double right)
 {
     frontLeft = left;
     backLeft = left;
+    centerLeft = left;
     frontRight = right;
     backRight = right;
+    centerRight = right;
 }
 
 double avgDrivePosition()
 {
 
-    return (fabs(frontLeft.get_position()) + fabs(backLeft.get_position()) + fabs(frontRight.get_position()) + fabs(backRight.get_position())) / 4;
+    return (fabs(frontLeft.get_position()) + fabs(centerLeft.get_position()) + fabs(backLeft.get_position()) + fabs(centerRight.get_position()) + fabs(frontRight.get_position()) + fabs(backRight.get_position())) / 6;
 }
 
 void setDriveCoast()
 {
     frontLeft.set_brake_mode(MOTOR_BRAKE_COAST);
-
+    centerLeft.set_brake_mode(MOTOR_BRAKE_COAST);
     backLeft.set_brake_mode(MOTOR_BRAKE_COAST);
     frontRight.set_brake_mode(MOTOR_BRAKE_COAST);
-
+    centerRight.set_brake_mode(MOTOR_BRAKE_COAST);
     backRight.set_brake_mode(MOTOR_BRAKE_COAST);
+}
+
+void setDriveBrake()
+{
+    frontLeft.set_brake_mode(MOTOR_BRAKE_BRAKE);
+    centerLeft.set_brake_mode(MOTOR_BRAKE_BRAKE);
+    backLeft.set_brake_mode(MOTOR_BRAKE_BRAKE);
+    frontRight.set_brake_mode(MOTOR_BRAKE_BRAKE);
+    centerRight.set_brake_mode(MOTOR_BRAKE_BRAKE);
+    backRight.set_brake_mode(MOTOR_BRAKE_BRAKE);
 }
 
 void resetDriveEncoders()
 {
     frontLeft.tare_position();
+    centerLeft.tare_position();
     backLeft.tare_position();
     frontRight.tare_position();
+    centerRight.tare_position();
     backRight.tare_position();
 }
 
@@ -44,7 +58,7 @@ void controlDrive()
 
 void moveFeet(double feet, double voltage)
 {
-    double units = ((feet * 12) / (wheelDiameter * M_PI)) * driveGearRatio * 900;
+    double units = ((feet * 12) / (wheelDiameter * M_PI)) * driveGearRatio * 360/2;
     int direction = abs(units) / units;
 
     resetDriveEncoders();

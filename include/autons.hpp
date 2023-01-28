@@ -16,7 +16,12 @@ void rightWinPointAuto();
 void leftWinPointAuto();
 void middleWinPointAuto();
 
-void rollerAuto();
+
+void leftAuto();
+void rightAuto();
+void leftRollerAuto();
+void rightRollerAuto();
+
 
 void default_constants();
 void one_mogo_constants();
