@@ -97,9 +97,9 @@ void leftAuto() {
   setDrive(-127, -127);
   pros::delay(300);
   setIntake(127);
-  pros::delay(150);
+  pros::delay(100);
   setDrive(50, 50);
-  setIntake(0);
+  setIntake(50);
   pros::delay(200);
   setDrive(0, 0);
   setDriveCoast();
