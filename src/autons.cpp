@@ -88,7 +88,7 @@ void leftAuto() {
   pros::delay(410); // 440 is 90 deg
   setDrive(0, 0);
   pros::delay(100);
-  setIntake(-127);
+  setIntake(127);
   moveFeet(-6, 127);
   pros::delay(200);
   setDrive(80, -80);
@@ -96,7 +96,7 @@ void leftAuto() {
   setDrive(0, 0);
   setDrive(-127, -127);
   pros::delay(300);
-  setIntake(127);
+  setIntake(-127);
   pros::delay(100);
   setDrive(50, 50);
   setIntake(50);

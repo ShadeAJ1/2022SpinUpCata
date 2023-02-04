@@ -196,6 +196,32 @@ void opcontrol() {
     controlCata();
     controlTrigger();
 
+    // if (controller.get_digital_new_press(DIGITAL_L1)) {
+    //   if (!downMode) {
+    //     while (!bumper.get_value()) {
+    //       setCata(127);
+    //     }
+    //     setCata(0);
+    //     downMode = true;
+    //   }
+    //   if (downMode) {
+    //     setCata(127);
+    //     pros::delay(200);
+    //     setCata(0);
+    //     downMode = false;
+    //     pros::delay(200);
+
+    //     while (!bumper.get_value()) {
+    //       setCata(127);
+    //     }
+    //     setCata(0);
+
+    //     downMode = true;
+    //   }
+    // } else {
+    //   setCata(0);
+    // }
+
     // std::cout << " New Gyro Heading: ";
     // std::cout << (chassis.imu.get_heading());
 
