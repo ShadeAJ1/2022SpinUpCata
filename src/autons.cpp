@@ -73,9 +73,9 @@ void leftAuto() {
   setDrive(80, -80);
   pros::delay(160);
   setDrive(100, 100);
-  pros::delay(150);
+  pros::delay(185);
   setDrive(0, 0);
-  pros::delay(250);
+  pros::delay(350);
   setCata(127);
   pros::delay(200);
   setCata(0);
@@ -89,17 +89,18 @@ void leftAuto() {
   setDrive(0, 0);
   pros::delay(100);
   setIntake(127);
-  moveFeet(-6, 127);
+  moveFeet(-6.1, 127);
   pros::delay(200);
   setDrive(80, -80);
-  pros::delay(300); // 440 is 90 deg
+  pros::delay(335); // 440 is 90 deg
   setDrive(0, 0);
-  setDrive(-127, -127);
-  pros::delay(300);
+  setIntake(0);
+  setDrive(-127 * 0.20, -127 * 0.20);
+  pros::delay(1500);
   setIntake(-127);
-  pros::delay(100);
+  pros::delay(110);
   setDrive(50, 50);
-  setIntake(50);
+  setIntake(0);
   pros::delay(200);
   setDrive(0, 0);
   setDriveCoast();
@@ -131,4 +132,41 @@ void rightRollerAuto() {
   setIntake(0);
   pros::delay(200);
   setDrive(0, 0);
+}
+
+void twoRollerExpansion() {
+  // setDrive(-75, -75);
+  // pros::delay(300);
+  // setIntake(-127);
+  // pros::delay(210);
+  // setIntake(0);
+  // setDrive(0, 0);
+  // moveFeet(2.1, 50);
+  // pros::delay(500);
+  // setDrive(80, -80);
+  // pros::delay(440); // 440 is 90 deg
+  // setDrive(0, 0);
+  // pros::delay(500);
+  // setDrive(-70, -70);
+  // pros::delay(1250);
+  // setIntake(-127);
+  // pros::delay(150);
+  // setIntake(0);
+  // setDrive(0, 0);
+  // pros::delay(500);
+  // moveFeet(0.5, 50);
+  // pros::delay(500);
+  // setDrive(-80, 80);
+  // pros::delay(440); // 440 is 90 deg
+  // setDrive(0, 0);
+  // moveFeet(-1.7, 50);
+  // pros::delay(500);
+  // setDrive(80, -80);
+  // pros::delay(220); // 440 is 90 deg
+  // setDrive(0, 0);
+  // pros::delay(500);
+  // moveFeet(0.57, 50);
+  // pros::delay(500);
+  trigger1.set_value(!trigger1.get_value());
+  trigger2.set_value(!trigger2.get_value());
 }

@@ -1,4 +1,5 @@
 #include "main.h"
+#include "autons.hpp"
 
 /////
 // For instalattion, upgrading, documentations and tutorials, check out website!
@@ -95,6 +96,8 @@ void initialize() {
 
       Auton("RIGHT Roller + Shoot Auton", rightAuto),
       Auton("RIGHT Roller ONLY Auton", rightRollerAuto),
+      Auton("Skills", twoRollerExpansion),
+
       // Example Autons
       Auton("Example Drive\n\nDrive forward and come back.", drive_example),
       Auton("Example Turn\n\nTurn 3 times.", turn_example),
@@ -157,8 +160,11 @@ void autonomous() {
   chassis.set_drive_brake(MOTOR_BRAKE_HOLD); // Set motors to hold.  This helps
                                              // autonomous consistency.
 
+  // twoRollerExpansion();
+
   ez::as::auton_selector
-      .call_selected_auton(); // Calls selected auton from autonomous selector.
+      .call_selected_auton(); // Calls selected auton from autonomous
+  //     selector.
 }
 
 /**
