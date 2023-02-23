@@ -231,7 +231,7 @@ void opcontrol() {
     // std::cout << " New Gyro Heading: ";
     // std::cout << (chassis.imu.get_heading());
 
-    if (master.get_digital_new_press(DIGITAL_B)) {
+    if (master.get_digital_new_press(DIGITAL_UP)) {
       autonomous();
 
       // moveFeet(1,80);
