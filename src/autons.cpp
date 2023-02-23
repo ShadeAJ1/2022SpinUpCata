@@ -167,6 +167,5 @@ void twoRollerExpansion() {
   // pros::delay(500);
   // moveFeet(0.57, 50);
   // pros::delay(500);
-  trigger1.set_value(!trigger1.get_value());
-  trigger2.set_value(!trigger2.get_value());
+  trigger.set_value(!trigger.get_value());
 }

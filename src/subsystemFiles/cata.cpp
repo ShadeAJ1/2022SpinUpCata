@@ -1,13 +1,23 @@
 #include "main.h"
 #include "pros/rtos.hpp"
 #include <future>
+bool downMode = bumper.get_value();
 
 void setCata(int power) { cata = power; }
 
-void setCataV(int voltage) { cata.move_voltage(voltage * 12000); }
+void setCataV(int voltage) { cata.move_voltage(voltage * 12001); }
 
 void controlCata() {
-  bool downMode = bumper.get_value();
+
+  if (controller.get_digital_new_press(DIGITAL_UP)) {
+    setCataV(1);
+    pros::delay(200);
+    setCataV(0);
+    pros::delay(200);
+
+    Task cataA(cataAsync);
+    
+  }
 
   if (controller.get_digital_new_press(DIGITAL_L1)) {
     if (!downMode) {

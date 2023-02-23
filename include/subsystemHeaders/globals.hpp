@@ -12,9 +12,9 @@ extern Motor cata;
 extern Motor intake1;
 
 // PNEUMATICS
-extern ADIPort trigger1;
-extern ADIPort trigger2;
+extern ADIPort trigger;
 extern ADIPort bumper;
+extern ADIPort blocker;
 
 // MISC
 extern Imu gyro;
@@ -35,6 +35,6 @@ extern Controller controller;
 #define intakePort1 7
 #define cataPort 3
 
-#define triggerPort1 'E'
-#define triggerPort2 'B'
+#define triggerPort 'E'
 #define bumperPort 'A'
+#define blockerPort 'B'
